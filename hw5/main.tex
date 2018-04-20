@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{listings}
+\usepackage{appendix} 
+% * <jclu81@gmail.com> 2018-02-14T20:32:15.777Z:
+%
+% ^.
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+\title{Weekly Homework 5}
+\author{Jingcheng Lu 42326170\\ 
+cs206p: Scientific Computing}
+ 
+\maketitle
+ 
+\begin{problem}{1}
+\text{ }\\
+For problem 1-4, the code is displayed in the appendix section.
+\end{problem}
+\begin{problem}{2}
+\text{ }\\
+Q: Why don’t we want to try it for exp(x)?\\
+A: Cause the image of exp(x) doesn't cross the x-axle, it doesn't have root. There is no x for exp(x) to equal 0.\\
+\item Result of Problem 2:\\
+For funtion funsin:	 The zero of x occurs at x= 0.000000 	Loop 6 times\\
+For funtion funcos:	 The zero of x occurs at x= 1.570796 	Loop 5 times\\
+For funtion funtan:	 The zero of x occurs at x= 0.000000 	Loop 6 times\\
+For funtion funlog:	 The zero of x occurs at x= 1.000000 	Loop 1 times\\
+For funtion funpow2:	 The zero of x occurs at x= 0.000000 	Loop 213 times\\
+For funtion funpow3:	 The zero of x occurs at x= 0.000000 	Loop 362 times\\
+\end{problem}
+\begin{problem}{3}
+\text{ }\\
+In this problem, I use 3 stop criterion:\\
+SC1. number of iterations $>$ MAX-ITERATION-TIMES 
+SC2. \[\left | x_{k+1}-x_{k} \right |< \varepsilon \]
+SC3. \[ \left | f(x_{k+1})-0 \right |<\varepsilon \]
+
+\item Result of Problem 3:\\
+SC1:\\
+For Funtion funsin and Stop Criterion 1:	 The zero of x occurs at x= 0.000000 	Loop 100001 times\\
+For Funtion funcos and Stop Criterion 1:	 The zero of x occurs at x= 1.570796 	Loop 100001 times\\
+For Funtion funtan and Stop Criterion 1:	 The zero of x occurs at x= 0.000000 	Loop 100001 times\\
+For Funtion funlog and Stop Criterion 1:	 The zero of x occurs at x= 1.000000 	Loop 100001 times\\
+For Funtion funpow2 and Stop Criterion 1:	 The zero of x occurs at x= 0.000000 	Loop 100001 times\\
+For Funtion funpow3 and Stop Criterion 1:	 The zero of x occurs at x= 0.000000 	Loop 100001 times\\
+
+SC2:\\
+For Funtion funsin and Stop Criterion 2:	 The zero of x occurs at x= 0.000000 	Loop 6 times\\
+For Funtion funcos and Stop Criterion 2:	 The zero of x occurs at x= 1.570796 	Loop 5 times\\
+For Funtion funtan and Stop Criterion 2:	 The zero of x occurs at x= 0.000000 	Loop 6 times\\
+For Funtion funlog and Stop Criterion 2:	 The zero of x occurs at x= 1.000000 	Loop 1 times\\
+For Funtion funpow2 and Stop Criterion 2:	 The zero of x occurs at x= 0.000000 	Loop 67 times\\
+For Funtion funpow3 and Stop Criterion 2:	 The zero of x occurs at x= 0.000000 	Loop 112 times\\
+
+SC3:\\
+For Funtion funsin and Stop Criterion 3:	 The zero of x occurs at x= 0.000000 	Loop 5 times\\
+For Funtion funcos and Stop Criterion 3:	 Exceed limit time\\
+For Funtion funtan and Stop Criterion 3:	 The zero of x occurs at x= 0.000000 	Loop 5 times\\
+For Funtion funlog and Stop Criterion 3:	 The zero of x occurs at x= 1.000000 	Loop 1 times\\
+For Funtion funpow2 and Stop Criterion 3:	 The zero of x occurs at x= 0.000000 	Loop 34 times\\
+For Funtion funpow3 and Stop Criterion 3:	 The zero of x occurs at x= 0.000000 	Loop 38 times\\
+
+\end{problem}
+ 
+\begin{problem}{4}
+\text{ }\\
+In this problem, I use the SC2 described above.
+\item Result for problem 4:\\
+For Funtion funcosp1 and Stop Criterion 2:	 The zero of x occurs at x= 3.141593 	Loop 27 times\\
+It takes more times to converge when compared to cos(x). Increase the base make the function's root away from 1, so it's harder to converge.
+\end{problem}
+ 
+\begin{problem}{5}
+\text{ }\\
+In this problem, I use the combination of 3 stop criterion list above.
+\item Result for problem 5:\\
+For Funtion funpow2:	 The zero of x occurs at x= 0.000000 	Loop 1 times 	 m= 2.000000\\
+For Funtion funpow3:	 The zero of x occurs at x= 0.000000 	Loop 1 times 	 m= 3.000000\\
+For Funtion funcosp1:	 The zero of x occurs at x= 3.141593 	Loop 5 times 	 m= 2.014195\\
+From the result, we can conclude that the number of loop is much smaller then in problem 1 to 4.
+\end{problem}
+
+\begin{appendices}  
+
+\section{Code for P1-P2}  
+\lstinputlisting[language=Python]{q1-2.py}  
+\section{Code for P3-P4}  
+\lstinputlisting[language=Python]{q3-4.py}
+\section{Code for P5}  
+\lstinputlisting[language=Python]{q5.py}
+\end{appendices}  
+\end{document}

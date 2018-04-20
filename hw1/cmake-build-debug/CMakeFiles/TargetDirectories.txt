@@ -1,0 +1,3 @@
+/Users/jclu/CLionProjects/206phw1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/jclu/CLionProjects/206phw1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jclu/CLionProjects/206phw1/cmake-build-debug/CMakeFiles/206phw1.dir
